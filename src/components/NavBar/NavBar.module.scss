@@ -1,0 +1,28 @@
+.navBar {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+    color: white;
+    margin-left: -2rem; 
+}
+
+.linksBox {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+    padding: 0.3rem;
+    &_active {
+        color: #ffffff;
+        border-bottom: 1px solid white;
+        &:hover {
+          color: #614819;
+        }
+      }
+}
