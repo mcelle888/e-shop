@@ -13,8 +13,11 @@ const FlowerCard = ( {flower} ) => {
         <img src={flower.imageLink} alt={flower.name} />
         <p>Starting from: ${flower.size.small.price} AUD</p>
         <p>Description: {flower.description}</p>
-        <Link to ={flower.id}>More Info</Link>
-        <Modal buttonText="Cart" />
+        <div>
+            <Link to ={flower.id}>More Info</Link>
+            <div className={styles.buttonBox}> <Modal buttonText={"Add to Cart"} children={<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit, temporibus.</p>} size="medium"/></div>
+        </div>
+
          </div>
     </article>
 

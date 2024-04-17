@@ -1,0 +1,23 @@
+.modalButton {
+    background-color: rgba(10, 10, 10, 0);
+    border: none;
+  }
+
+.modalButton:hover {
+    transform: scale(119%);
+    cursor: pointer;
+}
+
+.mediumModal {
+  height: 35vh;
+  width: 40rem;
+  position: fixed;
+  top: 10rem;
+}
+
+.smallModal {
+  height: 40vh;
+  width: 20rem;
+  position: fixed;
+  top: 10rem;
+}

@@ -1,26 +1,38 @@
-import React, { useState } from 'react'
-import styles from './Modal.module.scss'
+import React, { useState } from 'react';
+import styles from './Modal.module.scss';
 
-const Modal = ({ buttonText }) => {
-  const [isOpen, setIsOpen] = useState(false)
+const Modal = ({ buttonText, children, size }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleModal = () => {
-    setIsOpen(!isOpen)
-  }
+    setIsOpen(!isOpen);
+  };
+
+ 
+  const sizes = {
+    small: `${styles.smallModal}`,
+    medium: `${styles.mediumModal}`,
+    large: `${styles.largeModal}`,
+  };
+
+ 
+  const modalClass = sizes[size]  
 
   return (
     <>
-      <button onClick={toggleModal}>{buttonText}</button>
+      <button className={styles.modalButton} onClick={toggleModal}>
+        {buttonText}
+      </button>
       {isOpen && (
-        <dialog id="modal" className={styles.dialog} open>
+        <dialog className={modalClass} open>
           <button onClick={toggleModal} className={styles.closeDialog}>
             Close
           </button>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit, temporibus.</p>
+          <div>{children}</div>
         </dialog>
       )}
     </>
-  )
-}
+  );
+};
 
-export default Modal
+export default Modal;
