@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './LandingPage.module.scss'
 import { Link } from 'react-router-dom'
+import Modal from '../../Modal/Modal'
 
 const LandingPage = () => {
   return (
@@ -19,6 +20,9 @@ const LandingPage = () => {
                 IMAGE BOX
             </div>
             <Link to={"/products"}> View All Products</Link>
+
+            <Modal buttonText="tester" />
+
             
         </article>
         </div>

@@ -36,15 +36,18 @@ const ProductsPage = () => {
 
        <div className={styles.imgBox}>
             <img className={styles.banner} src="src\assets\flowerbanner.jpg" alt="field" />
-          
         </div>
-      
 
         <section>
           {flowers.map((flowers) => (
             <FlowerCard key={flowers.id} flower={flowers} />
           ))}
         </section>
+
+        <div className={styles.imgBox}>
+            <img className={styles.banner} src="src\assets\footer.jpg" alt="field" />
+          
+        </div>
        
     </main>
     </>

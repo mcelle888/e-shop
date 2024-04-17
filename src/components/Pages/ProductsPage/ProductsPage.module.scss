@@ -1,5 +1,6 @@
 .banner {
     width: 100vw;
+    height: 40vh;
 }
 
 section {
@@ -9,8 +10,29 @@ section {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin: 2rem 0;
+    animation: fade-in 2.5s;
 }
 
 header {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 40vh;
+}
+
+.heading {
+    font-size: 5rem;
+    animation: fade-in 2s;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100;
+    }
 }
