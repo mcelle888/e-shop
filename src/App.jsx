@@ -3,9 +3,18 @@ import './App.scss'
 import LandingPage from './components/Pages/LandingPage/LandingPage'
 import ProductsPage from './components/Pages/ProductsPage/ProductsPage'
 import NavBar from './components/NavBar/NavBar'
+import { getAllFlowers } from './services/flower-service'
+import { useEffect, useState } from 'react'
 
 
 function App() {
+  const [flowers, setFlowers] = useState([]);
+  useEffect(() => {
+
+    getAllFlowers()
+      .then((data) => setFlowers(data))
+      .catch((e) => console.log(e));
+  }, []);
 
 
   return (

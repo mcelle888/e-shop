@@ -1,0 +1,16 @@
+article {
+    border: 1px solid black;  
+    width: 20vw;
+    height: 50vh;;
+    background-color: white;
+    border-radius: 5px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+article > img {
+    height: 200px;
+    width: 200px;
+}
