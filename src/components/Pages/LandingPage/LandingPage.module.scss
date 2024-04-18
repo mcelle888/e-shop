@@ -1,8 +1,7 @@
 .banner {
-    width: 100vw;
-    height: 100vh;
+    width: 99vw;
+    height: 120vh;
 }
-
 
 .header {
     display: flex;
@@ -20,6 +19,8 @@
 
 .header > h1 {
     font-size: 8rem;
+    padding-top: 20rem;
+    margin: 0;
 }
 
 .header > p {
@@ -29,6 +30,7 @@
     border-radius: 4px;
 }
 
+ 
 
 @keyframes fade-in {
     from {

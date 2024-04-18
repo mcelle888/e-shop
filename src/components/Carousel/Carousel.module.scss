@@ -1,0 +1,89 @@
+
+.carouselBanner {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.carouselCards {
+    display: flex;
+    width: 99vw;
+    height: 30rem;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.featuredCard {
+    width: 18vw;
+    height: 23rem;
+    display: flex;
+    &:hover {
+        filter: brightness(56%);
+    }
+}
+
+.featuredHeading {
+    position: absolute;
+    display: flex;
+    padding: 1rem 2rem;
+    padding-bottom: 4rem;
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    width: auto;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 0;
+    width: 15vw;
+    justify-content: space-between;
+   
+    
+}
+
+.featuredCard:hover .featuredHeading{
+    display: flex;
+    flex-direction: row;
+}
+
+.flowerImg {
+    height: 100%;
+    width: 100%;
+}
+
+.buttonOverlay {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 95vw;
+    z-index: 1;
+}
+
+.navigateButton {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    &:hover{
+        transform: scale(120%);
+    }
+   
+}
+
+.wish {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+
+}
+
+.wish > img {
+    height: 4rem;
+    width: 4rem;
+}
+
+.active {
+    filter: invert(100%)
+}

@@ -27,3 +27,23 @@ import {
     })
     return unsub
   }
+
+ export const getFeaturedFlowers = async () => {
+   const collectionRef = collection(db, "flowers");
+   const snapshot = await getDocs(collectionRef);
+   return snapshot.docs
+     .filter((doc) => doc.data().isFeatured === true)
+     .map((doc) => {
+       return { id: doc.id, ...doc.data() };
+       
+     });
+
+     
+ };
+
+ export const updateWishList = async (id, values) => {
+   const docRef = doc(db, "flowers", id);
+   await updateDoc(docRef, {
+     wishList: values.wishList,
+   });
+ };
