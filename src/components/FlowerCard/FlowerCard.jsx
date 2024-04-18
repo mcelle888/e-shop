@@ -34,7 +34,6 @@ const FlowerCard = ({ flower }) => {
           <p>Starting from: ${flower.size.small.price} AUD</p>
           <p>Description: {flower.description}</p>
           <div>
-            <Link to={flower.id}>More Info</Link>
             <div className={styles.buttonBox}>
               <Modal
                 buttonText="Add to Cart"
