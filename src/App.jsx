@@ -5,6 +5,7 @@ import ProductsPage from './components/Pages/ProductsPage/ProductsPage'
 import NavBar from './components/NavBar/NavBar'
 import { getAllFlowers } from './services/flower-service'
 import { useEffect, useState } from 'react'
+import { WishProvider } from './context/WishContext'
 
 
 function App() {
@@ -19,15 +20,17 @@ function App() {
 
   return (
     <>
-    <BrowserRouter>
-    <NavBar />
-    <Routes>
-      <Route path='/' element={<LandingPage />} />
-      <Route path='/products' element={<ProductsPage />} />
-    </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <NavBar />
+        <WishProvider>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/products" element={<ProductsPage />} />
+          </Routes>
+        </WishProvider>
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
 export default App

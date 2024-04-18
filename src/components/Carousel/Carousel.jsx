@@ -9,23 +9,6 @@ import styles from "./Carousel.module.scss";
 const Carousel = () => {
   const [flowers, setFlowers] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isWishList, setIsWishList] = useState(false);
-
-  const wishToggle = (flowerId) => {
-    setIsWishList((pastWishState) => {
-      const updatedFlowers = flowers.map((flower) => {
-        if (flower.id === flowerId) {
-          return { ...flower, isWishList: !pastWishState };
-        }
-        return flower;
-      });
-      setFlowers(updatedFlowers);
-
-      updateWishList(flowerId, { wishList: !pastWishState });
-
-      return !pastWishState;
-    });
-  };
 
   useEffect(() => {
     const fetchFlowers = async () => {
@@ -56,10 +39,24 @@ const Carousel = () => {
     });
   };
 
+  const toggleWishList = async (flowerId) => {
+    const updatedFlowers = flowers.map((flower) => {
+      if (flower.id === flowerId) {
+        return { ...flower, wishList: !flower.wishList };
+      }
+      return flower;
+    });
+
+    setFlowers(updatedFlowers);
+    await updateWishList(flowerId, {
+      wishList: !flowers.find((flower) => flower.id === flowerId).wishList,
+    });
+  };
+
   const visibleFlowers = [];
 
   if (flowers.length > 0) {
-    for (let i = currentIndex; i < currentIndex + 5; i++) {
+    for (let i = currentIndex; i < currentIndex + 4; i++) {
       const index = i % flowers.length;
       visibleFlowers.push(flowers[index]);
     }
@@ -85,9 +82,9 @@ const Carousel = () => {
                   <h3>{flower.name}</h3>
                   <button
                     className={`${styles.wish} ${
-                      flower.isWishList ? styles.active : ""
+                      flower.wishList ? styles.active : ""
                     }`}
-                    onClick={() => wishToggle(flower.id)}
+                    onClick={() => toggleWishList(flower.id)}
                   >
                     <img src="src\assets\heart.png" alt="heart" />
                   </button>

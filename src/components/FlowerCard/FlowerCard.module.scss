@@ -1,12 +1,13 @@
 .flowerCard {
     width: 15vw;
     height: 90%;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(99, 44, 44, 0.548);
     border-radius: 5px;
     padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: black;
 }
 
 .flowerCard > img {
@@ -29,4 +30,27 @@
     padding: 0.5rem;
     border-radius: 2rem;
     display: flex;
+}
+
+.cardHeading {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+
+}
+
+.wish {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+
+}
+
+.wish > img {
+    height: 3rem;
+    width: 3rem;
+}
+
+.active {
+    filter: invert(100%)
 }
