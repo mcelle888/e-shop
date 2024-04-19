@@ -1,6 +1,6 @@
 .banner {
     width: 100vw;
-    height: 40vh;
+    height: 50vh;
 }
 
 section {
@@ -30,18 +30,8 @@ header {
     text-shadow: 0 0 2px rgb(167, 161, 161), 0 0 2px rgb(167, 161, 161), 0 0 2px rgb(167, 161, 161), 0 0 2px rgb(167, 161, 161);
 }
 
-.imgBox {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-.footer {
-    position: absolute;
-    color: white;
-    display: flex;
-    padding-right: 3rem;
-    flex-direction: column;
-}
+
+
 
 @keyframes fade-in {
     from {

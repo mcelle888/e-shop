@@ -26,7 +26,7 @@ const AddCart = () => {
             src="src\assets\wip.png"
             alt="Added to Cart"
           />
-          <p>Sorry, still working on this feature!</p>
+          <p>Sorry, still working on the Cart feature!</p>
         </div>
       )}
     </div>

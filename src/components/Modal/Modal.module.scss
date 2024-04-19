@@ -9,7 +9,7 @@
 }
 
 .mediumModal {
-  height: 50vh;
+  height: fit-content;
   width: 50rem;
   position: fixed;
   top: 10rem;
@@ -40,5 +40,6 @@
     border: none;
     color: white;
     padding: 0.5rem;
+    border-radius: 20px;
 
 }

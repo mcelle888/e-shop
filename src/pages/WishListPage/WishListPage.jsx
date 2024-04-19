@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from "react";
-import styles from "./ProductsPage.module.scss";
-import FlowerCard from "../../components/FlowerCard/FlowerCard";
+import React, { useState, useEffect } from "react";
+import styles from "./WishListPage.module.scss";
 import { subscribeToFlowers } from "../../services/flower-service";
+import FlowerCard from "../../components/FlowerCard/FlowerCard";
 
-const ProductsPage = () => {
+const WishListPage = () => {
   const [flowers, setFlowers] = useState([]);
 
   useEffect(() => {
     // set up the subscription
     const unsubscribe = subscribeToFlowers(setFlowers);
-    // get the subscription to set state
 
-    // clean up function
+    // cleanup
     return () => {
       // unsubscribe
       unsubscribe();
@@ -19,7 +18,7 @@ const ProductsPage = () => {
   }, []);
 
   useEffect(() => {
-    document.title = "Flower Haven: All Products";
+    document.title = "Flower Haven: Wish List";
 
     // cleanup
     return () => {
@@ -27,11 +26,14 @@ const ProductsPage = () => {
     };
   }, []);
 
+  // Filter flowers with wishList === true
+  const filteredFlowers = flowers.filter((flower) => flower.wishList);
+
   return (
     <>
       <main>
         <header>
-          <h1 className={styles.heading}>All Products</h1>
+          <h1 className={styles.heading}>Wish List</h1>
         </header>
 
         <div className={styles.imgBox}>
@@ -43,9 +45,13 @@ const ProductsPage = () => {
         </div>
 
         <section>
-          {flowers.map((flowers) => (
-            <FlowerCard key={flowers.id} flower={flowers} />
-          ))}
+          {filteredFlowers.length > 0 ? (
+            filteredFlowers.map((flower) => (
+              <FlowerCard key={flower.id} flower={flower} />
+            ))
+          ) : (
+            <div className={styles.emptyMessage}>No items in wishlist</div>
+          )}
         </section>
 
         <div className={styles.imgBox}>
@@ -54,18 +60,10 @@ const ProductsPage = () => {
             src="src\assets\footer.jpg"
             alt="field"
           />
-          <div className={styles.footer}>
-            <p>About Us</p>
-            <p>Contact Us</p>
-            <p>Returns</p>
-            <p>Privacy Policy</p>
-            <p>Terms of Service</p>
-          </div>
-          
         </div>
       </main>
     </>
   );
 };
 
-export default ProductsPage;
+export default WishListPage;

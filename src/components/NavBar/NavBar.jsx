@@ -8,15 +8,26 @@ const NavBar = () => {
   const navLink = ({isActive}) => isActive ? `${styles.link} ${styles.link_active}`: styles.link
   return (
     <nav className={styles.navBar}>
-
       <div className={styles.linksBox}>
-        <NavLink className={navLink} to="/">Home</NavLink>
-        <NavLink className={navLink} to="/products">All Products</NavLink>
-        <Modal buttonText={<img className={styles.cart} src="src\assets\cart.png" alt="cart" />} size={"small"} children={<CartContent/>} />
+        <NavLink className={navLink} to="/">
+          Home
+        </NavLink>
+        <NavLink className={navLink} to="/products">
+          All Products
+        </NavLink>
+        <NavLink className={navLink} to="/wishlist">
+          WishList
+        </NavLink>
+        <Modal
+          buttonText={
+            <img className={styles.cart} src="src\assets\cart.png" alt="cart" />
+          }
+          size={"small"}
+          children={<CartContent />}
+        />
       </div>
-     
     </nav>
-  )
+  );
 }
 
 export default NavBar
