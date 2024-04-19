@@ -75,6 +75,9 @@ const Carousel = () => {
         </div>
 
         <div className={styles.carouselBanner}>
+          <div>
+            <p className={styles.carouselHeading}>Featured Products</p>
+          </div>
           <div className={styles.carouselCards}>
             {visibleFlowers.map((flower, index) => (
               <div key={index} className={styles.featuredCard}>

@@ -17,30 +17,27 @@ const FlowerCard = ({ flower }) => {
   return (
     <>
       <article className={styles.flowerBox}>
-        <div className={styles.flowerCard}>
-          <div className={styles.cardHeading}>
-            <h2>{flower.name}</h2>
-            <button
-              className={`${styles.wish} ${
-                flower.wishList ? styles.active : ""
-              }`}
-              onClick={handleWishListChange}
-            >
-              <img src="src\assets\heart.png" alt="heart" />
-            </button>
-          </div>
+        <div className={styles.cardHeading}></div>
 
-          <img src={flower.imageLink} alt={flower.name} />
-          <p>Starting from: ${flower.size.small.price} AUD</p>
-          <p>Description: {flower.description}</p>
-          <div>
-            <div className={styles.buttonBox}>
-              <Modal
-                buttonText="Add to Cart"
-                children={<Cart flower={flower} />}
-                size="medium"
-              />
-            </div>
+        <img src={flower.imageLink} alt={flower.name} />
+        <div className={styles.flowerHeader}>
+          <h2>{flower.name}</h2>
+          <button
+            className={`${styles.wish} ${flower.wishList ? styles.active : ""}`}
+            onClick={handleWishListChange}
+          >
+            <img src="src\assets\heart.png" alt="heart" />
+          </button>
+        </div>
+
+        <p>Starting from: ${flower.size.small.price} AUD</p>
+        <div>
+          <div className={styles.buttonBox}>
+            <Modal
+              buttonText="Add to Cart"
+              children={<Cart flower={flower} />}
+              size="medium"
+            />
           </div>
         </div>
       </article>

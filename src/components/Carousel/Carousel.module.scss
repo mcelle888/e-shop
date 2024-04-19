@@ -1,22 +1,28 @@
 
 .carouselBanner {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     height: auto;
     width: auto;
     align-items: center;
     justify-content: center;
-    
+    background-color: rgba(0, 0, 0, 0.2);
+
+}
+
+.carouselHeading {
+    font-size: larger;
+    text-shadow: 0 0 2px rgb(77, 70, 70), 0 0 2px rgb(77, 70, 70), 0 0 2px rgb(77, 70, 70), 0 0 2px rgb(77, 70, 70);
 }
 
 .carouselCards {
     display: flex;
     width: 99vw;
-    height: 30rem;
+    height: 25rem;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    background-color: rgba(0, 0, 0, 0.2);
+    padding-bottom: 5rem;
 }
 
 .featuredCard {
@@ -30,19 +36,21 @@
 
 .featuredHeading {
     position: absolute;
+    bottom: 0;
     display: flex;
-    padding: 1rem 2rem;
-    padding-bottom: 4rem;
     color: rgb(255, 255, 255);
     font-size: 1.5rem;
-    width: auto;
+    width: 18vw;
     display: none;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.4);
     margin: 0;
-    width: 15vw;
-    justify-content: space-between;
+    justify-content: space-between;   
    
-    
+}
+
+
+.featuredHeading > h3 {
+    margin-left: 1rem;
 }
 
 .featuredCard:hover .featuredHeading{
@@ -85,5 +93,5 @@
 }
 
 .active {
-    filter: invert(100%)
+    filter: brightness(0.9) invert(.7) sepia(.5) hue-rotate(300deg) saturate(200%);
 }

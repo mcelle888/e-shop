@@ -1,18 +1,23 @@
 .modalButton {
     background-color: rgba(10, 10, 10, 0);
     border: none;
+    color: white;
   }
 
 .modalButton:hover {
-    transform: scale(119%);
     cursor: pointer;
 }
 
 .mediumModal {
-  height: 35vh;
-  width: 40rem;
+  height: 50vh;
+  width: 50rem;
   position: fixed;
   top: 10rem;
+  background-color: #5a4b40;
+  border: none;
+  border-radius: 60px;
+  z-index: 2;
+  border: 4px solid white;
 }
 
 .smallModal {
@@ -20,4 +25,20 @@
   width: 20rem;
   position: fixed;
   top: 10rem;
+  background-color: #5a4b40;
+  border: none;
+  border-radius: 60px;
+  z-index: 2;
+  border: 4px solid white;
+}
+
+.closeDialog {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    background-color: rgb(131, 63, 63);
+    border: none;
+    color: white;
+    padding: 0.5rem;
+
 }

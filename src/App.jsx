@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.scss'
-import LandingPage from './components/Pages/LandingPage/LandingPage'
-import ProductsPage from './components/Pages/ProductsPage/ProductsPage'
 import NavBar from './components/NavBar/NavBar'
 import { getAllFlowers } from './services/flower-service'
 import { useEffect, useState } from 'react'
 import { WishProvider } from './context/WishContext'
-import NotFoundPage from './components/Pages/NotFoundPage/NotFoundPage'
+import LandingPage from './pages/LandingPage/LandingPage'
+import ProductsPage from './pages/ProductsPage/ProductsPage'
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage'
 
 
 function App() {
@@ -17,6 +17,12 @@ function App() {
       .then((data) => setFlowers(data))
       .catch((e) => console.log(e));
   }, []);
+
+   const [isModalOpen, setIsModalOpen] = useState(false);
+
+   const toggleModal = () => {
+     setIsModalOpen(!isModalOpen);
+   };
 
 
   return (

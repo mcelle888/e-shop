@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import styles from './Modal.module.scss';
+import React, { useState } from "react";
+import styles from "./Modal.module.scss";
 
 const Modal = ({ buttonText, children, size }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,15 +8,13 @@ const Modal = ({ buttonText, children, size }) => {
     setIsOpen(!isOpen);
   };
 
- 
   const sizes = {
     small: `${styles.smallModal}`,
     medium: `${styles.mediumModal}`,
     large: `${styles.largeModal}`,
   };
 
- 
-  const modalClass = sizes[size]  
+  const modalClass = sizes[size];
 
   return (
     <>
@@ -26,7 +24,7 @@ const Modal = ({ buttonText, children, size }) => {
       {isOpen && (
         <dialog className={modalClass} open>
           <button onClick={toggleModal} className={styles.closeDialog}>
-            Close
+            X
           </button>
           <div>{children}</div>
         </dialog>
