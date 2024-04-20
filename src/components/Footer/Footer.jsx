@@ -1,5 +1,5 @@
-import React from 'react'
-import styles from './Footer.module.scss'
+import React from "react";
+import styles from "./Footer.module.scss";
 
 const Footer = () => {
   return (
@@ -23,27 +23,27 @@ const Footer = () => {
       <div className={styles.rightFooter}>
         <div className={styles.icons}>
           <h2>Connect with us!</h2>
-          <img src="src\assets\facebook.png" />
-          <img src="src\assets\insta.png" />
-          <img src="src\assets\mail.png" />
-          <img src="src\assets\tik.png" />
-          <img src="src\assets\twitter.png" />
+          <img src="public\assets\facebook.png" />
+          <img src="public\assets\insta.png" />
+          <img src="public\assets\mail.png" />
+          <img src="public\assets\tik.png" />
+          <img src="public\assets\twitter.png" />
         </div>
 
         <div className={styles.icons}>
           <h2>We accept</h2>
-          <img src="src\assets\visa.png" />
-          <img src="src\assets\mastercard.png" />
-          <img src="src\assets\stripe.png" />
-          <img src="src\assets\paypal.png" />
-          <img src="src\assets\americanex.png" />
-          <img src="src\assets\afterpay.png" />
-          <img src="src\assets\google.png" />
-          <img src="src\assets\bitcoin.png" />
+          <img src="public\assets\visa.png" />
+          <img src="public\assets\mastercard.png" />
+          <img src="public\assets\stripe.png" />
+          <img src="public\assets\paypal.png" />
+          <img src="public\assets\americanex.png" />
+          <img src="public\assets\afterpay.png" />
+          <img src="public\assets\google.png" />
+          <img src="public\assets\bitcoin.png" />
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default Footer
+export default Footer;

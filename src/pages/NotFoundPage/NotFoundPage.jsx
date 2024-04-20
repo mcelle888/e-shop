@@ -1,6 +1,6 @@
-import React from 'react'
-import styles from './NotFoundPage.module.scss'
-import { Link } from 'react-router-dom';
+import React from "react";
+import styles from "./NotFoundPage.module.scss";
+import { Link } from "react-router-dom";
 
 const NotFoundPage = () => {
   return (
@@ -8,7 +8,7 @@ const NotFoundPage = () => {
       <div className={styles.imgBox}>
         <img
           className={styles.banner}
-          src="src\assets\background.jpg"
+          src="public\assets\background.jpg"
           alt="field"
         />
         <header className={styles.missingHeader}>
@@ -18,6 +18,6 @@ const NotFoundPage = () => {
       </div>
     </>
   );
-}
+};
 
-export default NotFoundPage
+export default NotFoundPage;

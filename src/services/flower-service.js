@@ -1,15 +1,14 @@
 import {
-    addDoc,
     collection,
-    deleteDoc,
     doc,
-    getDoc,
     getDocs,
     onSnapshot,
     updateDoc,
   } from "firebase/firestore";
   import { db } from "../config/firestore";
-  
+
+
+  // get all flower data
   export const getAllFlowers = async () => {
     const collectionRef = collection(db, "flowers");
     const snapshot = await getDocs(collectionRef);
@@ -19,6 +18,7 @@ import {
   };
 
 
+  // real time updates
   export const subscribeToFlowers = (callback) => {
     const collectionRef = collection(db, "flowers")
     const unsub = onSnapshot(collectionRef, (snapshot) => {
@@ -28,6 +28,8 @@ import {
     return unsub
   }
 
+
+  // get featured flowers for carousel
  export const getFeaturedFlowers = async () => {
    const collectionRef = collection(db, "flowers");
    const snapshot = await getDocs(collectionRef);
@@ -41,6 +43,8 @@ import {
      
  };
 
+
+// update wishlist
  export const updateWishList = async (id, values) => {
    const docRef = doc(db, "flowers", id);
    await updateDoc(docRef, {

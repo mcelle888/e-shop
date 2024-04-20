@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
   getFeaturedFlowers,
-  subscribeToFlowers,
   updateWishList,
 } from "../../services/flower-service";
 import styles from "./Carousel.module.scss";
@@ -67,10 +66,10 @@ const Carousel = () => {
       <section className={styles.featuredContainer}>
         <div className={styles.buttonOverlay}>
           <button className={styles.navigateButton} onClick={prevSlide}>
-            <img src="src\assets\prev.png" alt="prev" />
+            <img src="public\assets\prev.png" alt="prev" />
           </button>
           <button className={styles.navigateButton} onClick={nextSlide}>
-            <img src="src\assets\next.png" alt="next" />
+            <img src="public\assets\next.png" alt="next" />
           </button>
         </div>
 
@@ -89,7 +88,7 @@ const Carousel = () => {
                     }`}
                     onClick={() => toggleWishList(flower.id)}
                   >
-                    <img src="src\assets\heart.png" alt="heart" />
+                    <img src="public\assets\heart.png" alt="heart" />
                   </button>
                 </div>
                 <img

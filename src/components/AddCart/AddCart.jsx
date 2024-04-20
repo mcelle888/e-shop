@@ -23,7 +23,7 @@ const AddCart = () => {
         <div className={styles.errorMessage}>
           <img
             className={styles.wip}
-            src="src\assets\wip.png"
+            src="public\assets\wip.png"
             alt="Added to Cart"
           />
           <p>Sorry, still working on the Cart feature!</p>

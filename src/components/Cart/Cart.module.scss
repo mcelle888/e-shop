@@ -31,6 +31,16 @@
     display: flex;
     border: 2px solid white;
     color: white;
+    &:hover {
+        cursor: pointer;
+         background-color: rgb(37, 49, 71);
+    }
+}
+
+.buttonContainer > button {
+    &:hover {
+        filter: drop-shadow(0 0 0.1rem rgb(255, 255, 255));
+    }
 }
 
 .details {

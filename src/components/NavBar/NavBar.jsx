@@ -1,11 +1,12 @@
-import React from 'react'
-import styles from './NavBar.module.scss'
-import { NavLink } from 'react-router-dom'
-import Modal from '../Modal/Modal'
-import CartContent from '../CartContent/CartContent'
+import React from "react";
+import styles from "./NavBar.module.scss";
+import { NavLink } from "react-router-dom";
+import Modal from "../Modal/Modal";
+import CartContent from "../CartContent/CartContent";
 
 const NavBar = () => {
-  const navLink = ({isActive}) => isActive ? `${styles.link} ${styles.link_active}`: styles.link
+  const navLink = ({ isActive }) =>
+    isActive ? `${styles.link} ${styles.link_active}` : styles.link;
   return (
     <nav className={styles.navBar}>
       <div className={styles.linksBox}>
@@ -20,7 +21,11 @@ const NavBar = () => {
         </NavLink>
         <Modal
           buttonText={
-            <img className={styles.cart} src="src\assets\cart.png" alt="cart" />
+            <img
+              className={styles.cart}
+              src="public\assets\cart.png"
+              alt="cart"
+            />
           }
           size={"small"}
           children={<CartContent />}
@@ -28,6 +33,6 @@ const NavBar = () => {
       </div>
     </nav>
   );
-}
+};
 
-export default NavBar
+export default NavBar;

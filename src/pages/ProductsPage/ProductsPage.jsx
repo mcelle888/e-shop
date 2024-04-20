@@ -38,7 +38,7 @@ const ProductsPage = () => {
         <div className={styles.imgBox}>
           <img
             className={styles.banner}
-            src="src\assets\flowerbanner.jpg"
+            src="public\assets\flowerbanner.jpg"
             alt="field"
           />
         </div>
@@ -52,7 +52,7 @@ const ProductsPage = () => {
         <div className={styles.imgBox}>
           <img
             className={styles.banner}
-            src="src\assets\footer.jpg"
+            src="public\assets\footer.jpg"
             alt="field"
           />
           <Footer />
