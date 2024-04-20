@@ -19,12 +19,14 @@
     text-decoration: none;
     color: white;
     padding: 0.3rem;
-    &_active {
+     &:hover {
+          color: #614819;
+          filter: drop-shadow(0 0 0.1rem rgb(129, 112, 80));
+        }
+      &_active {
         color: #ffffff;
         border-bottom: 1px solid white;
-        &:hover {
-          color: #614819;
-        }
+       
       }
 }
 

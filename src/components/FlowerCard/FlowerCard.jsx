@@ -34,7 +34,7 @@ const FlowerCard = ({ flower }) => {
         <div>
           <div className={styles.buttonBox}>
             <Modal
-              buttonText="Add to Cart"
+              buttonText="Select options"
               children={<Cart flower={flower} />}
               size="medium"
             />

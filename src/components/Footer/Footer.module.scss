@@ -1,0 +1,39 @@
+.footer {
+    position: absolute;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    width: 95vw;
+}
+
+.leftFooter {
+    display: flex;
+    width: 30%;
+    gap: 8rem;
+}
+
+.rightFooter {
+    display: flex;
+    justify-content: space-evenly;
+    width: 75%;
+    align-items: flex-end;
+    gap: 4rem;
+    flex-direction: row;
+    height: auto;
+}
+
+.icons {
+    justify-content: center;
+    text-align: center;
+    margin-left: 5rem;
+}
+
+.icons > img {
+    padding: 0.5rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    &:hover {
+        transform: scale(120%);
+        filter: drop-shadow(0 0 0.1rem rgba(255, 255, 255, 1));
+    }
+}

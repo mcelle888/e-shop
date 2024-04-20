@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./WishListPage.module.scss";
 import { subscribeToFlowers } from "../../services/flower-service";
 import FlowerCard from "../../components/FlowerCard/FlowerCard";
+import Footer from "../../components/Footer/Footer";
 
 const WishListPage = () => {
   const [flowers, setFlowers] = useState([]);
@@ -60,6 +61,7 @@ const WishListPage = () => {
             src="src\assets\footer.jpg"
             alt="field"
           />
+          <Footer />
         </div>
       </main>
     </>

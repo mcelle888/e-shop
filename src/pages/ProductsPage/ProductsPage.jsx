@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./ProductsPage.module.scss";
 import FlowerCard from "../../components/FlowerCard/FlowerCard";
 import { subscribeToFlowers } from "../../services/flower-service";
+import Footer from "../../components/Footer/Footer";
 
 const ProductsPage = () => {
   const [flowers, setFlowers] = useState([]);
@@ -54,15 +55,11 @@ const ProductsPage = () => {
             src="src\assets\footer.jpg"
             alt="field"
           />
-          <div className={styles.footer}>
-            <p>About Us</p>
-            <p>Contact Us</p>
-            <p>Returns</p>
-            <p>Privacy Policy</p>
-            <p>Terms of Service</p>
-          </div>
-          
+          <Footer />
         </div>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">
+          Top
+        </button>
       </main>
     </>
   );
