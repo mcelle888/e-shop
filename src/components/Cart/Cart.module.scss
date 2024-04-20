@@ -50,3 +50,16 @@
 label {
     margin: 0.4rem;
 }
+
+.quantity {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    align-items: center;
+}
+
+.quantity > button {
+    height: 2rem;
+    width: 2rem;
+}
+

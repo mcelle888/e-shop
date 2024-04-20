@@ -4,7 +4,8 @@ import AddCart from "../AddCart/AddCart";
 
 const Cart = ({ flower }) => {
   const [size, setSize] = useState("small");
-  const [showAddCart, setShowAddCart] = useState(false);  
+  const [quantity, setQuantity] = useState(1);
+  const [showAddCart, setShowAddCart] = useState(false);
 
   const handleOptionChange = (event) => {
     setSize(event.target.value);
@@ -24,13 +25,21 @@ const Cart = ({ flower }) => {
   };
 
   const handleAddToCart = () => {
-    setShowAddCart(true);  
+    setShowAddCart(true);
+  };
+
+  const handleQuantity = (amount) => {
+    if (amount > 0) {
+      setQuantity(quantity + amount);
+    } else if (quantity + amount >= 1) {
+      setQuantity(quantity + amount);
+    }
   };
 
   return (
     <div>
       {showAddCart ? (
-        <AddCart flower={flower} size={size} />
+        <AddCart flower={flower} size={size} quantity={quantity} />
       ) : (
         <div className={styles.cartBox}>
           <img
@@ -48,14 +57,13 @@ const Cart = ({ flower }) => {
               <option value="medium">Medium</option>
               <option value="large">Large</option>
             </select>
-            <label htmlFor="colour">Colour: </label>
-            <select value={size} name="colour" onChange={handleOptionChange}>
-              <option value="oranges">Oranges</option>
-              <option value="pinks">Pinks</option>
-              <option value="whites">Whites</option>
-              <option value="reds">Reds</option>
-              <option value="mixed">Mixed</option>
-            </select>
+
+            <div className={styles.quantity}>
+              <label htmlFor="quantity">Quantity: </label>
+              <button onClick={() => handleQuantity(-1)}>-</button>
+              <p>{quantity}</p>
+              <button onClick={() => handleQuantity(1)}>+</button>
+            </div>
             <div className={styles.buttonContainer}>
               <button className={styles.buttonBox} onClick={handleAddToCart}>
                 Add to Cart
