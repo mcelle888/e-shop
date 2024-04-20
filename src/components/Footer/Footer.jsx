@@ -23,23 +23,23 @@ const Footer = () => {
       <div className={styles.rightFooter}>
         <div className={styles.icons}>
           <h2>Connect with us!</h2>
-          <img src="public\assets\facebook.png" />
-          <img src="public\assets\insta.png" />
-          <img src="public\assets\mail.png" />
-          <img src="public\assets\tik.png" />
-          <img src="public\assets\twitter.png" />
+          <img src="assets/facebook.png" />
+          <img src="assets/insta.png" />
+          <img src="assets/mail.png" />
+          <img src="assets/tik.png" />
+          <img src="assets/twitter.png" />
         </div>
 
         <div className={styles.icons}>
           <h2>We accept</h2>
-          <img src="public\assets\visa.png" />
-          <img src="public\assets\mastercard.png" />
-          <img src="public\assets\stripe.png" />
-          <img src="public\assets\paypal.png" />
-          <img src="public\assets\americanex.png" />
-          <img src="public\assets\afterpay.png" />
-          <img src="public\assets\google.png" />
-          <img src="public\assets\bitcoin.png" />
+          <img src="assets/visa.png" />
+          <img src="assets/mastercard.png" />
+          <img src="assets/stripe.png" />
+          <img src="assets/paypal.png" />
+          <img src="assets/americanex.png" />
+          <img src="assets/afterpay.png" />
+          <img src="assets/google.png" />
+          <img src="assets/bitcoin.png" />
         </div>
       </div>
     </div>

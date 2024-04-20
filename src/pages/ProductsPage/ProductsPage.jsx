@@ -38,7 +38,7 @@ const ProductsPage = () => {
         <div className={styles.imgBox}>
           <img
             className={styles.banner}
-            src="public\assets\flowerbanner.jpg"
+            src="assets/flowerbanner.jpg"
             alt="field"
           />
         </div>
@@ -50,11 +50,7 @@ const ProductsPage = () => {
         </section>
 
         <div className={styles.imgBox}>
-          <img
-            className={styles.banner}
-            src="public\assets\footer.jpg"
-            alt="field"
-          />
+          <img className={styles.banner} src="assets/footer.jpg" alt="field" />
           <Footer />
         </div>
         <button onclick="topFunction()" id="myBtn" title="Go to top">

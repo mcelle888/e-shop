@@ -8,7 +8,7 @@ const NotFoundPage = () => {
       <div className={styles.imgBox}>
         <img
           className={styles.banner}
-          src="public\assets\background.jpg"
+          src="assets/background.jpg"
           alt="field"
         />
         <header className={styles.missingHeader}>

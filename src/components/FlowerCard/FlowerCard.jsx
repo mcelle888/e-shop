@@ -26,7 +26,7 @@ const FlowerCard = ({ flower }) => {
             className={`${styles.wish} ${flower.wishList ? styles.active : ""}`}
             onClick={handleWishListChange}
           >
-            <img src="public\assets\heart.png" alt="heart" />
+            <img src="assets/heart.png" alt="heart" />
           </button>
         </div>
 

@@ -23,7 +23,7 @@ const NavBar = () => {
           buttonText={
             <img
               className={styles.cart}
-              src="public\assets\cart.png"
+              src="assets/cart.png"
               alt="cart"
             />
           }

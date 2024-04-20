@@ -66,10 +66,10 @@ const Carousel = () => {
       <section className={styles.featuredContainer}>
         <div className={styles.buttonOverlay}>
           <button className={styles.navigateButton} onClick={prevSlide}>
-            <img src="public\assets\prev.png" alt="prev" />
+            <img src="assets/prev.png" alt="prev" />
           </button>
           <button className={styles.navigateButton} onClick={nextSlide}>
-            <img src="public\assets\next.png" alt="next" />
+            <img src="assets/next.png" alt="next" />
           </button>
         </div>
 
@@ -88,7 +88,7 @@ const Carousel = () => {
                     }`}
                     onClick={() => toggleWishList(flower.id)}
                   >
-                    <img src="public\assets\heart.png" alt="heart" />
+                    <img src="assets/heart.png" alt="heart" />
                   </button>
                 </div>
                 <img

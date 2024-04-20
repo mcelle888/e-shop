@@ -6,7 +6,7 @@ const CartContent = () => {
     <div className={styles.cartContent}>
       <h2>No items in Cart</h2>
       <p>Sorry, still working on the Cart feature!</p>
-      <img className={styles.wip} src="public\assets\wip.png" alt="wip" />
+      <img className={styles.wip} src="assets/wip.png" alt="wip" />
     </div>
   );
 };
