@@ -1,17 +1,22 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import styles from "./FlowerCard.module.scss";
 import Modal from "../Modal/Modal";
 import Cart from "../Cart/Cart";
 import { updateWishList } from "../../services/flower-service";
 
 const FlowerCard = ({ flower }) => {
+  const [showModal, setShowModal] = useState(false); 
+
   const handleWishListChange = async () => {
     try {
       await updateWishList(flower.id, { wishList: !flower.wishList });
     } catch (error) {
       console.error("Error updating wish list:", error);
     }
+  };
+
+  const handleModalToggle = () => {
+    setShowModal(!showModal); 
   };
 
   return (
@@ -35,8 +40,16 @@ const FlowerCard = ({ flower }) => {
           <div className={styles.buttonBox}>
             <Modal
               buttonText="Select options"
-              children={<Cart flower={flower} />}
+              children={
+                <Cart
+                  flower={flower}
+                  showModal={showModal}
+                  handleModalToggle={handleModalToggle}
+                />
+              }
               size="medium"
+              isOpen={showModal} 
+              toggleModal={handleModalToggle} 
             />
           </div>
         </div>

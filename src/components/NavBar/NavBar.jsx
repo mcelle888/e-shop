@@ -7,6 +7,7 @@ import CartContent from "../CartContent/CartContent";
 const NavBar = () => {
   const navLink = ({ isActive }) =>
     isActive ? `${styles.link} ${styles.link_active}` : styles.link;
+
   return (
     <nav className={styles.navBar}>
       <div className={styles.linksBox}>
@@ -21,15 +22,12 @@ const NavBar = () => {
         </NavLink>
         <Modal
           buttonText={
-            <img
-              className={styles.cart}
-              src="assets/cart.png"
-              alt="cart"
-            />
+            <img className={styles.cart} src="assets/cart.png" alt="cart" />
           }
-          size={"small"}
-          children={<CartContent />}
-        />
+          size="small"
+        >
+          <CartContent />
+        </Modal>
       </div>
     </nav>
   );

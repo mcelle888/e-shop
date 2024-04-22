@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Modal.module.scss";
 
-const Modal = ({ buttonText, children, size }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleModal = () => {
-    setIsOpen(!isOpen);
-  };
-
+const Modal = ({ buttonText, children, size, isOpen, toggleModal }) => {
   const sizes = {
     small: `${styles.smallModal}`,
     medium: `${styles.mediumModal}`,

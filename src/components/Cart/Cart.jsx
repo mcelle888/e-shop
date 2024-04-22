@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Cart.module.scss";
 import AddCart from "../AddCart/AddCart";
 
-const Cart = ({ flower }) => {
+const Cart = ({ flower, showModal, handleModalToggle }) => {
   const [size, setSize] = useState("small");
   const [quantity, setQuantity] = useState(1);
   const [showAddCart, setShowAddCart] = useState(false);
@@ -39,7 +39,13 @@ const Cart = ({ flower }) => {
   return (
     <div>
       {showAddCart ? (
-        <AddCart flower={flower} size={size} quantity={quantity} />
+        <AddCart
+          flower={flower}
+          size={size}
+          quantity={quantity}
+          showModal={showModal}
+          handleModalToggle={handleModalToggle} 
+        />
       ) : (
         <div className={styles.cartBox}>
           <img

@@ -1,21 +1,24 @@
 import React, { useState } from "react";
 import styles from "./AddCart.module.scss";
 
-const AddCart = () => {
-  const [showImage, setShowImage] = useState(false);
+const AddCart = ({ handleModalToggle }) => {
+   const [showImage, setShowImage] = useState(false);
 
-  const handleClick = () => {
-    setShowImage(true);
+  const handleAddtoCartClick = () => {
+    setShowImage(true)
+  }
+  const handleKeepShoppingClick = () => {
+    handleModalToggle(); 
   };
 
   return (
     <div className={styles.addedCartBox}>
       <h3>Successfully Added to Cart</h3>
       <div>
-        <button className={styles.cartButtons} onClick={handleClick}>
+        <button className={styles.cartButtons} onClick={handleAddtoCartClick}>
           View Cart
         </button>
-        <button className={styles.cartButtons} onClick={handleClick}>
+        <button className={styles.cartButtons} onClick={handleKeepShoppingClick}>
           Keep Shopping
         </button>
       </div>

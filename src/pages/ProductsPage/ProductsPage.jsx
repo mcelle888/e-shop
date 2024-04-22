@@ -53,9 +53,6 @@ const ProductsPage = () => {
           <img className={styles.banner} src="assets/footer.jpg" alt="field" />
           <Footer />
         </div>
-        <button onclick="topFunction()" id="myBtn" title="Go to top">
-          Top
-        </button>
       </main>
     </>
   );
