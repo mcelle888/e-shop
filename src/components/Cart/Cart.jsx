@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styles from "./Cart.module.scss";
 import AddCart from "../AddCart/AddCart";
+import { addToCart } from "../../services/flower-service";
 
-const Cart = ({ flower, showModal, handleModalToggle }) => {
+const Cart = ({ flower }) => {
   const [size, setSize] = useState("small");
   const [quantity, setQuantity] = useState(1);
   const [showAddCart, setShowAddCart] = useState(false);
@@ -11,8 +12,8 @@ const Cart = ({ flower, showModal, handleModalToggle }) => {
     setSize(event.target.value);
   };
 
-  const getPrice = () => {
-    switch (size) {
+  const getPriceForSize = (selectedSize) => {
+    switch (selectedSize) {
       case "small":
         return flower.size.small.price;
       case "medium":
@@ -24,32 +25,26 @@ const Cart = ({ flower, showModal, handleModalToggle }) => {
     }
   };
 
-  const handleAddToCart = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const price = getPriceForSize(size);
+    const totalPrice = price * quantity;
+    addToCart(flower.name, size, quantity, price, totalPrice, flower.imageLink);
     setShowAddCart(true);
   };
 
-  const handleQuantity = (amount) => {
-    if (amount > 0) {
-      setQuantity(quantity + amount);
-    } else if (quantity + amount >= 1) {
-      setQuantity(quantity + amount);
-    }
-  };
-
   const handleKeepShopping = () => {
-    setShowAddCart(false); 
+    setShowAddCart(false);
   };
 
   return (
     <div>
       {showAddCart ? (
-        <AddCart
+        <AddCart 
           flower={flower}
           size={size}
           quantity={quantity}
-          showModal={showModal}
-          handleModalToggle={handleModalToggle}
-          handleKeepShopping={handleKeepShopping}  
+          handleKeepShopping={handleKeepShopping}
         />
       ) : (
         <div className={styles.cartBox}>
@@ -60,26 +55,34 @@ const Cart = ({ flower, showModal, handleModalToggle }) => {
           />
           <div className={styles.details}>
             <h2>Name: {flower.name}</h2>
-            <p>Price: ${getPrice()} AUD</p>
+            <p>Price: ${getPriceForSize(size)} AUD</p>
             <p>Description: {flower.description}</p>
-            <label htmlFor="size">Size: </label>
-            <select value={size} name="size" onChange={handleOptionChange}>
-              <option value="small">Small</option>
-              <option value="medium">Medium</option>
-              <option value="large">Large</option>
-            </select>
+            <form onSubmit={handleSubmit}>
+              <label htmlFor="size">Size: </label>
+              <select value={size} name="size" onChange={handleOptionChange}>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+              </select>
 
-            <div className={styles.quantity}>
-              <label htmlFor="quantity">Quantity: </label>
-              <button onClick={() => handleQuantity(-1)}>-</button>
-              <p>{quantity}</p>
-              <button onClick={() => handleQuantity(1)}>+</button>
-            </div>
-            <div className={styles.buttonContainer}>
-              <button className={styles.buttonBox} onClick={handleAddToCart}>
-                Add to Cart
-              </button>
-            </div>
+              <div className={styles.quantity}>
+                <label htmlFor="quantity">Quantity: </label>
+                <input
+                  type="number"
+                  value={quantity}
+                  name="quantity"
+                  min="1"
+                  required 
+                  onChange={(e) => setQuantity(e.target.value)}
+                />
+                
+              </div>
+              <div className={styles.buttonContainer}>
+                <button className={styles.buttonBox} type="submit">
+                  Add to Cart
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       )}

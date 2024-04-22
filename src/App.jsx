@@ -8,6 +8,7 @@ import LandingPage from './pages/LandingPage/LandingPage'
 import ProductsPage from './pages/ProductsPage/ProductsPage'
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage'
  
+ 
 
 
 function App() {
@@ -30,14 +31,13 @@ function App() {
     <>
       <BrowserRouter>
         <NavBar />
- 
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/products" element={<ProductsPage />} />
-            <Route path="/wishlist" element={<WishListPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
- 
+
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/wishlist" element={<WishListPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
       </BrowserRouter>
     </>
   );

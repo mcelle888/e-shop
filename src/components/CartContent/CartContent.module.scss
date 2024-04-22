@@ -11,3 +11,40 @@
     width: 6rem;
     filter: invert(100%);
 }
+.errorMessage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+.deleteButton {
+    background-color:  rgb(131, 63, 63);
+    border: none;
+    border-radius: 100px;
+    margin: 1rem;
+    color: white;
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(153, 76, 71);
+        filter: drop-shadow(0 0 0.1rem rgb(255, 255, 255));
+    }
+
+}
+
+.checkoutButton {
+    background-color: rgba(87, 121, 167, 0.7);
+    padding: 0.5rem;
+    border-radius: 2rem;
+    display: flex;
+    border: 2px solid white;
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(37, 49, 71);
+        filter: drop-shadow(0 0 0.1rem rgb(255, 255, 255));
+    }
+    margin: 1rem;
+    color: white;
+}
+

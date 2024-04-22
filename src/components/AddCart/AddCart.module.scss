@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 4rem;
+    gap: 2rem;
     color: rgb(221, 198, 162);
 }
 
@@ -14,6 +14,11 @@
     border: 2px solid white;
     margin: 2rem;
     color: white;
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(37, 49, 71);
+        filter: drop-shadow(0 0 0.1rem rgb(255, 255, 255));
+    }
 }
 
 .wip {
@@ -29,3 +34,5 @@
     align-items: center;
 
 }
+
+ 

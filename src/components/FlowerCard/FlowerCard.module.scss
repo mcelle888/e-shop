@@ -25,7 +25,7 @@
     display: flex;
     border: 2px solid white;
     &:hover {
-        background-color: rgb(37, 49, 71);
+        background-color: rgb(108, 143, 207);
 
     }
 }
@@ -63,6 +63,7 @@
     width: 3rem;
     &:hover {
         filter: drop-shadow(0 0 0.1rem rgba(255, 255, 255, 1));
+        transform: scale(110%);
     }
 }
 

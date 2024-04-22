@@ -4,6 +4,8 @@ import {
     getDocs,
     onSnapshot,
     updateDoc,
+    addDoc,
+    deleteDoc,
   } from "firebase/firestore";
   import { db } from "../config/firestore";
 
@@ -51,3 +53,46 @@ import {
      wishList: values.wishList,
    });
  };
+
+
+// add to cart collection
+export const addToCart = async (flowerName, size, quantity, price, totalPrice, imageLink) => {
+  try {
+    const cartRef = collection(db, "cart");  
+    await addDoc(cartRef, {
+      flowerName,
+      size,
+      quantity,
+      price,
+      totalPrice,
+      imageLink,
+    });
+    console.log("Item added to cart successfully!");
+  } catch (error) {
+    console.error("Error adding item to cart:", error);
+  }
+};
+
+
+// get cart data
+export const fetchCartItems = async () => {
+  const cartRef = collection(db, "cart");
+  const snapshot = await getDocs(cartRef);
+  return snapshot.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+  }));
+};
+
+
+// delete cart items
+export const removeFromCart = async (itemId) => {
+  try {
+    const docRef = doc(db, "cart", itemId);
+    await deleteDoc(docRef);
+    console.log("Item deleted successfully!");
+  } catch (error) {
+    console.error("Error deleting item:", error);
+  }
+};
+ 

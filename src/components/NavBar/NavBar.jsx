@@ -30,7 +30,7 @@ const NavBar = () => {
           buttonText={
             <img className={styles.cart} src="assets/cart.png" alt="cart" />
           }
-          size="small"
+          size="large"
           isOpen={modalOpen} 
           toggleModal={handleModalToggle}
         >

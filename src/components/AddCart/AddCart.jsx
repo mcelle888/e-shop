@@ -1,25 +1,30 @@
 import React, { useState } from "react";
 import styles from "./AddCart.module.scss";
+import CartContent from "../CartContent/CartContent";
+import Modal from "../../containers/Modal/Modal";
 
 const AddCart = ({ handleKeepShopping }) => {
   const [showImage, setShowImage] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
-  const handleAddtoCartClick = () => {
-    setShowImage(true);
-
+  const handleModalToggle = () => {
+    setModalOpen(!modalOpen);
   };
 
+  
   return (
     <div className={styles.addedCartBox}>
-      <h3>Successfully Added to Cart</h3>
+      <h3>Successfully Added to Cart!</h3>
       <div>
-        <button className={styles.cartButtons} onClick={handleAddtoCartClick}>
-          View Cart
-        </button>
-        <button
-          className={styles.cartButtons}
-          onClick={handleKeepShopping}  
+        <Modal
+          buttonText={"View Cart"}
+          size="large"
+          isOpen={modalOpen}
+          toggleModal={handleModalToggle}
         >
+          <CartContent />
+        </Modal>
+        <button className={styles.cartButtons} onClick={handleKeepShopping}>
           Keep Shopping
         </button>
       </div>
