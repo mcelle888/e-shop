@@ -36,6 +36,10 @@ const Cart = ({ flower, showModal, handleModalToggle }) => {
     }
   };
 
+  const handleKeepShopping = () => {
+    setShowAddCart(false); 
+  };
+
   return (
     <div>
       {showAddCart ? (
@@ -44,7 +48,8 @@ const Cart = ({ flower, showModal, handleModalToggle }) => {
           size={size}
           quantity={quantity}
           showModal={showModal}
-          handleModalToggle={handleModalToggle} 
+          handleModalToggle={handleModalToggle}
+          handleKeepShopping={handleKeepShopping}  
         />
       ) : (
         <div className={styles.cartBox}>

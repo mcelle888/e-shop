@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import styles from "./AddCart.module.scss";
 
-const AddCart = ({ handleModalToggle }) => {
-   const [showImage, setShowImage] = useState(false);
+const AddCart = ({ handleKeepShopping }) => {
+  const [showImage, setShowImage] = useState(false);
 
   const handleAddtoCartClick = () => {
-    setShowImage(true)
-  }
-  const handleKeepShoppingClick = () => {
-    handleModalToggle(); 
+    setShowImage(true);
+
   };
 
   return (
@@ -18,7 +16,10 @@ const AddCart = ({ handleModalToggle }) => {
         <button className={styles.cartButtons} onClick={handleAddtoCartClick}>
           View Cart
         </button>
-        <button className={styles.cartButtons} onClick={handleKeepShoppingClick}>
+        <button
+          className={styles.cartButtons}
+          onClick={handleKeepShopping}  
+        >
           Keep Shopping
         </button>
       </div>

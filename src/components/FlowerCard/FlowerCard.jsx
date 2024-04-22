@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import styles from "./FlowerCard.module.scss";
-import Modal from "../Modal/Modal";
+import Modal from "../../containers/Modal/Modal";
 import Cart from "../Cart/Cart";
 import { updateWishList } from "../../services/flower-service";
 
 const FlowerCard = ({ flower }) => {
-  const [showModal, setShowModal] = useState(false); 
+  const [showModal, setShowModal] = useState(false);
 
   const handleWishListChange = async () => {
     try {
@@ -16,7 +16,7 @@ const FlowerCard = ({ flower }) => {
   };
 
   const handleModalToggle = () => {
-    setShowModal(!showModal); 
+    setShowModal(!showModal);
   };
 
   return (
@@ -40,16 +40,10 @@ const FlowerCard = ({ flower }) => {
           <div className={styles.buttonBox}>
             <Modal
               buttonText="Select options"
-              children={
-                <Cart
-                  flower={flower}
-                  showModal={showModal}
-                  handleModalToggle={handleModalToggle}
-                />
-              }
+              children={<Cart flower={flower} />}
               size="medium"
-              isOpen={showModal} 
-              toggleModal={handleModalToggle} 
+              isOpen={showModal}
+              toggleModal={handleModalToggle}
             />
           </div>
         </div>
